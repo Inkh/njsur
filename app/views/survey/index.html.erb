@@ -1,0 +1,25 @@
+<div class="container center">
+  <h1 class="indigo-text">Note Jam Survey</h1>
+  <div class="card small center">
+    <h2>Are you a Musician?</h2>
+    
+    <div class="row">
+      <div class="col s4 offset-s4">
+        <form action="/boolean" method="post">
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <input type="hidden" name="answer" value="yes">
+          <input type="submit" value="Yes" class="waves-effect waves-light btn" style="width:100%">
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s4 offset-s4">
+        <form action="/boolean" method="post">
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <input type="hidden" name="answer" value="no">
+          <input type="submit" value="No" class="waves-effect waves-light btn" style="width:100%">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

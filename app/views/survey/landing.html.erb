@@ -1,0 +1,51 @@
+<div class="container">
+  <% if @answer == 'yes' %>
+  <p>I'm a musician!</p>
+  <form action="/submit" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <p>1. To allow conveniences such as finding musicians near you, you may need to enter your personal address. Will you be willing to store your personal address?</p>
+        <input type="radio" name="address_first" id="add_yes" value="yes">
+        <label for="add_yes">Yes</label>
+        <input type="radio" name="address_first" id="add_no" value="no">
+        <label for="add_no">No</label>
+
+    <p>If not, will you be willing to just enter your zipcode/city?</p>
+      <input type="radio" name="address_response" value="Yes">
+      <input type="radio" name="address_response" value="No">
+
+    <p>2. Since Note Jam emphasizes on meeting each other in real life, are you comfortable with signing up with your real name instead of an alias? (Only your first name will be displayed)</p>
+
+    <p>3. Will you be willing to meet complete strangers to form a band?</p>
+
+    <p>4. If you had spare space, will you be willing to rent it out for other people to use?</p>
+
+    <p>4b. To you, what sounds like a reasonable price of renting a place for a 2 hour session? </p>
+
+    <p>5. Are you comfortable with using Paypal for peer to peer payments? </p>
+
+    <p>6. Based on the description of our services, how likely will you use the site? (1 for least likely, 10 for most)</p>
+
+
+    <input type="submit" name="" value="">
+  </form>
+  <% else %>
+  <p>I'm not a musician!</p>
+  <p>Shhh... This part is still under construction</p>
+  <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="input_text" type="text" data-length="10">
+            <label for="input_text">Input text</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea id="textarea1" class="materialize-textarea" data-length="120"></textarea>
+            <label for="textarea1">Textarea</label>
+          </div>
+        </div>
+      </form>
+    </div>
+  <% end %>
+</div>

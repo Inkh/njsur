@@ -1,0 +1,19 @@
+<% if @answer == 'yes' %>
+  <form action="/submit" method="post">
+    <p>1. To allow conveniences such as finding musicians near you, you may need to enter your personal address. Will you be willing to store your personal address?</p>
+
+    <p>If not, will you be willing to just enter your zipcode/city?</p>
+
+
+    <p>2. Since Note Jam emphasizes on meeting each other in real life, are you comfortable with signing up with your real name instead of an alias? (Only your first name will be displayed)</p>
+
+    <p>3. Will you be willing to meet complete strangers to form a band?</p>
+
+    <p>4b. If you had spare space, will you be willing to rent it out for other people to use?</p>
+
+    <p>4. To you, what sounds like a reasonable price of renting a place for a 2 hour session? </p>
+
+  </form>
+<% else %>
+  <p>I'm not a musician!</p>
+<% end %>
