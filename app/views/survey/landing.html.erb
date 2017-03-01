@@ -3,7 +3,7 @@
   <p>I'm a musician!</p>
   <form action="/submit" method="post">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <p>12. To allow conveniences such as finding musicians near you, you may need to enter your personal address. Will you be willing to store your personal address?</p>
+    <p>1. To allow conveniences such as finding musicians near you, you may need to enter your personal address. Will you be willing to store your personal address?</p>
         <input type="radio" name="address_first" id="add_yes" value="yes">
         <label for="add_yes">Yes</label>
         <input type="radio" name="address_first" id="add_no" value="no">
@@ -30,7 +30,33 @@
   </form>
   <% else %>
   <p>I'm not a musician!</p>
-  <p>Shhh... This part is still under construction</p>
+  <!-- buy/sell -->
+  <p>1. Would you use notjam in order to market any products or services related to music?</p>
+
+  <p>2. If your products/services were sold would you be comfortable using paypal?</p>
+
+  <p>2b. Would you rather meet up locally to sell a product or prefer online payments?</p>
+
+  <p>2c. If you offered lessons would you rather meet with the client, or have the client come to you?</p>
+<!-- looking for gigs -->
+  <p>3. If you wanted to book a gig for an event, with the ability that this website would offer information about the band, would you use this website to contact the band?</p>
+
+  <p>3b. Would you rather directly contact the band or have them be notified of interest?</p>
+
+  <p>3c. Would you pay based on performance or would it be a flat rate?</p>
+<!-- rent -->
+  <p>4. Would you use our website to rent out an available space for a band?</p>
+
+  <p>4b. If yes, would you rather accept a flat rate or hourly?</p>
+
+  <p>4c. If your whole house was available, would you rent the whole property our or just a certain space?</p>
+
+  <p>4d. If a band contacted you to rent, would you rather use AirB&B or NotJam?</p>
+
+<!-- rating -->
+  <p>5. Based on your experience with a band/client/vendor, would you prefer to rate the person/group?</p>
+
+  <p>5b. </p>
   <div class="row">
       <form class="col s12">
         <div class="row">
