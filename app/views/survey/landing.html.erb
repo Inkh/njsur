@@ -3,6 +3,9 @@
   <p>I'm a musician!</p>
   <form action="/submit" method="post">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <p>What instrument(s) do you play? Check all that apply</p>
+        
+
     <p>1. To allow conveniences such as finding musicians near you, you may need to enter your personal address. Will you be willing to store your personal address?</p>
         <input type="radio" name="address_first" id="add_yes" value="yes">
         <label for="add_yes">Yes</label>
@@ -10,12 +13,22 @@
         <label for="add_no">No</label>
 
     <p>If not, will you be willing to just enter your zipcode/city?</p>
-      <input type="radio" name="address_response" value="Yes">
-      <input type="radio" name="address_response" value="No">
+        <input type="radio" name="address_second" id="sec_yes" value="yes">
+        <label for="sec_yes">Yes</label>
+        <input type="radio" name="address_second" id="sec_no" value="no">
+        <label for="sec_no">No</label>
 
     <p>2. Since Note Jam emphasizes on meeting each other in real life, are you comfortable with signing up with your real name instead of an alias? (Only your first name will be displayed)</p>
+        <input type="radio" name="real_name" id="name_yes" value="yes">
+        <label for="name_yes">Yes</label>
+        <input type="radio" name="real_name" id="name_no" value="no">
+        <label for="name_no">No</label>
 
     <p>3. Will you be willing to meet complete strangers to form a band?</p>
+        <input type="radio" name="meet_up" id="meet_yes" value="yes">
+        <label for="meet_yes">Yes</label>
+        <input type="radio" name="meet_up" id="meet_no" value="no">
+        <label for="meet_no">No</label>
 
     <p>4. If you had spare space, will you be willing to rent it out for other people to use?</p>
 
