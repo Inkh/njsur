@@ -148,16 +148,16 @@
     <label for="rating_yes">Yes</label>
     <input type="radio" name="rating" id="rating_no" value="rating_no">
     <label for="rating_no">No</label>
-  <p>Any other additional comments (optional)</p>
+
   <div class="row">
-      <form class="col s12" action="/submit" method="post">
+      <form class="col s12" action="/submit_no" method="post">
         <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
 
         <div class="row">
           <div class="input-field col s12">
-            <textarea id="textarea1" class="materialize-textarea" data-length="120" name = "optional"></textarea>
-            <label for="textarea1">Textarea</label>
-            <input type="submit" name="" value="Submit">
+            <textarea id="textarea1" class="materialize-textarea" data-length="120" name = "comment"></textarea>
+            <label for="textarea1">Any other additional comments (optional)</label>
+            <input type="submit" value="Submit">
           </div>
         </div>
       </form>
