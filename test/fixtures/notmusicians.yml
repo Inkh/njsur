@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  market: MyString
+  payment: MyString
+  location: MyString
+  meet: MyString
+  contact: MyString
+  notify: MyString
+  pay: MyString
+  rent: MyString
+  rent_pay: MyString
+  rent_space: MyString
+  rating: MyString
+  comment: MyText
+
+two:
+  market: MyString
+  payment: MyString
+  location: MyString
+  meet: MyString
+  contact: MyString
+  notify: MyString
+  pay: MyString
+  rent: MyString
+  rent_pay: MyString
+  rent_space: MyString
+  rating: MyString
+  comment: MyText

@@ -1,0 +1,2 @@
+class Notmusician < ApplicationRecord
+end

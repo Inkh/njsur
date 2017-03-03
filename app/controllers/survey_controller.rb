@@ -37,4 +37,16 @@ class SurveyController < ApplicationController
       redirect_to ('/landing/yes')
     end
   end
+
+  def submit_no
+    submission = Notmusician.create()
+
+    if submission.valid?
+      session[:user] = "Submitted"
+      redirect_to ('/thank')
+    else
+      flash[:errors] = "Please fill out all questions"
+      redirect_to ('/landing/yes')
+    end
+  end
 end
