@@ -3,6 +3,15 @@ class SurveyController < ApplicationController
   end
 
   def result
+    pw = "davipede"
+    input = params['input']
+
+    if pw == input
+      @render = true
+    else
+      flash[:errors] = "Incorrect input, try again."
+      redirect_to ('/result')
+    end
   end
 
   def thank
