@@ -3,6 +3,18 @@ class SurveyController < ApplicationController
   end
 
   def result
+    pw = "davipede"
+    input = params['input']
+
+    if pw == input
+      @render = true
+    else
+      flash[:errors] = "Incorrect input, try again."
+      redirect_to ('/result')
+    end
+  end
+
+  def thank
   end
 
   def boolean
@@ -14,7 +26,15 @@ class SurveyController < ApplicationController
     @answer = params[:answer]
   end
 
-  def submit
-    render json: params['optional']
+  def submit_yes
+    submission = Musician.create(instrument: params['instrument'], address: params['address_first'], name: params['name_yes'], stranger: params['meet_up'], rent: params['rent'], price: params['pricing'], comment: params['comment'])
+
+    if submission.valid?
+      session[:user] = "Submitted"
+      redirect_to ('/thank')
+    else
+      flash[:errors] = "Please fill out all questions"
+      redirect_to ('/landing/yes')
+    end
   end
 end
