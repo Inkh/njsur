@@ -1,50 +1,86 @@
 <div class="container">
   <% if @answer == 'yes' %>
-  <p>I'm a musician!</p>
+  <h1>I'm a musician!</h1>
   <form action="/submit" method="post">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <p>What instrument(s) do you play? Check all that apply</p>
-        
+    <p>1. What instrument(s) do you play? Check all that apply</p>
+        <input type="checkbox" name="instrument" value="guitar" id="guitar" class="filled-in">
+        <label for="guitar">Guitar</label><br>
 
-    <p>1. To allow conveniences such as finding musicians near you, you may need to enter your personal address. Will you be willing to store your personal address?</p>
+        <input type="checkbox" name="instrument" value="guitar" id="bass_guitar" class="filled-in">
+        <label for="bass_guitar">Bass Guitar</label><br>
+
+        <input type="checkbox" name="instrument" value="guitar" id="drums" class="filled-in">
+        <label for="drums">Drums</label><br>
+
+        <input type="checkbox" name="instrument" value="guitar" id="vocal" class="filled-in">
+        <label for="vocal">I'm a Vocalist</label><br>
+
+        <input type="checkbox" name="instrument" value="guitar" id="keyboard" class="filled-in">
+        <label for="keyboard">Keyboard</label><br>
+
+        <div class="row">
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s3" style="margin-left:15px;margin-top:30px;">
+                  <input id="input_text" type="text" data-length="20">
+                  <label for="input_text">Other(Please specify):</label>
+                </div>
+              </div>
+        </div>
+
+    <p>2. To allow conveniences such as finding musicians near you, you may need to enter your personal address. Which method would you prefer?</p>
         <input type="radio" name="address_first" id="add_yes" value="yes">
-        <label for="add_yes">Yes</label>
+        <label for="add_yes">Street address</label>
         <input type="radio" name="address_first" id="add_no" value="no">
-        <label for="add_no">No</label>
+        <label for="add_no">Zipcode</label>
 
-    <p>If not, will you be willing to just enter your zipcode/city?</p>
+    <!-- <p>If not, will you be willing to just enter your zipcode/city?</p>
         <input type="radio" name="address_second" id="sec_yes" value="yes">
         <label for="sec_yes">Yes</label>
         <input type="radio" name="address_second" id="sec_no" value="no">
-        <label for="sec_no">No</label>
+        <label for="sec_no">No</label> -->
 
-    <p>2. Since Note Jam emphasizes on meeting each other in real life, are you comfortable with signing up with your real name instead of an alias? (Only your first name will be displayed)</p>
+    <p>3. Since Note Jam emphasizes on meeting each other in real life, are you comfortable with signing up with your real name instead of an alias? (Only your first name will be displayed)</p>
         <input type="radio" name="real_name" id="name_yes" value="yes">
         <label for="name_yes">Yes</label>
         <input type="radio" name="real_name" id="name_no" value="no">
         <label for="name_no">No</label>
 
-    <p>3. Will you be willing to meet complete strangers to form a band?</p>
+    <p>4. Will you be willing to meet complete strangers to form a band?</p>
         <input type="radio" name="meet_up" id="meet_yes" value="yes">
         <label for="meet_yes">Yes</label>
         <input type="radio" name="meet_up" id="meet_no" value="no">
         <label for="meet_no">No</label>
 
-    <p>4. If you had spare space, will you be willing to rent it out for other people to use?</p>
+    <p>5. If you had spare space, will you be willing to rent it out for other people to use?</p>
+        <input type="radio" name="rent" id="rent_yes" value="yes">
+        <label for="rent_yes">Yes</label>
+        <input type="radio" name="rent" id="rent_no" value="no">
+        <label for="rent_no">No</label>
 
-    <p>4b. To you, what sounds like a reasonable price of renting a place for a 2 hour session? </p>
+    <p>5b. What price range will you be willing to rent out your room for? </p>
+        <input type="radio" name=pricing"" id="price_30" value="30-60">
+        <label for="price_130">$30-$60</label>
+        <input type="radio" name=pricing"" id="price_60" value="60-90">
+        <label for="price_160">$60-90</label>
+        <input type="radio" name=pricing"" id="price_100" value="100-150">
+        <label for="price_100">$100 - $150</label>
+        <input type="radio" name=pricing"" id="no_price" value="no">
+        <label for="no_price">I'm not willing to rent my space out</label><br>
 
-    <p>5. Are you comfortable with using Paypal for peer to peer payments? </p>
+    <!-- <p>5. Are you comfortable with using Paypal for peer to peer payments? </p>
 
-    <p>6. Based on the description of our services, how likely will you use the site? (1 for least likely, 10 for most)</p>
+    <p>6. Based on the description of our services, how likely will you use the site? (1 for least likely, 10 for most)</p> -->
 
 
-    <input type="submit" name="" value="">
+    <input type="submit" name="" value="Submit" class="waves-effect waves-light btn" style="margin-bottom:30px; margin-top:30px">
   </form>
+
   <% else %>
   <p>I'm not a musician!</p>
   <!-- buy/sell -->
-  <p>1. Would you use notjam in order to market any products or services related to music?</p>
+  <p>1. Would you use notejam in order to market any products or services related to music?</p>
 
   <p>2. If your products/services were sold would you be comfortable using paypal?</p>
 
@@ -62,9 +98,9 @@
 
   <p>4b. If yes, would you rather accept a flat rate or hourly?</p>
 
-  <p>4c. If your whole house was available, would you rent the whole property our or just a certain space?</p>
+  <p>4c. If your whole house was available, would you rent the whole property out or just a certain space?</p>
 
-  <p>4d. If a band contacted you to rent, would you rather use AirB&B or NotJam?</p>
+  <p>4d. If a band contacted you to rent, would you rather use AirB&B or NoteJam?</p>
 
 <!-- rating -->
   <p>5. Based on your experience with a band/client/vendor, would you prefer to rate the person/group?</p>
