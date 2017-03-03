@@ -15,6 +15,6 @@ class SurveyController < ApplicationController
   end
 
   def submit
-    render json: params['address_first']
+    render json: params['optional']
   end
 end

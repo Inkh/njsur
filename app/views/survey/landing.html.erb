@@ -80,44 +80,72 @@
   <% else %>
   <p>I'm not a musician!</p>
   <!-- buy/sell -->
-  <p>1. Would you use notejam in order to market any products or services related to music?</p>
-
+  <p>1. Would you use Notejam in order to market any products or services related to music?</p>
+    <input type="radio" name="market" id="add_yes" value="yes">
+    <label for="add_yes">Yes</label>
+    <input type="radio" name="market" id="add_no" value="no">
+    <label for="add_no">No</label>
   <p>2. If your products/services were sold would you be comfortable using paypal?</p>
-
+    <input type="radio" name="payment" id="payment_yes" value="yes">
+    <label for="payment_yes">Yes</label>
+    <input type="radio" name="payment" id="payment_no" value="no">
+    <label for="payment_no">No</label>
   <p>2b. Would you rather meet up locally to sell a product or prefer online payments?</p>
-
+    <input type="radio" name="location" id="Local" value="Local">
+    <label for="Local">Local</label>
+    <input type="radio" name="location" id="Online" value="Online">
+    <label for="Online">Online</label>
+    <input type="radio" name="location" id="Both" value="Both">
+    <label for="Both">Both</label>
   <p>2c. If you offered lessons would you rather meet with the client, or have the client come to you?</p>
+    <input type="radio" name="meet" id="meet" value="meet">
+    <label for="meet">Meet with client</label>
+    <input type="radio" name="meet" id="come_to" value="come_to">
+    <label for="come_to">Client comes to me</label>
 <!-- looking for gigs -->
   <p>3. If you wanted to book a gig for an event, with the ability that this website would offer information about the band, would you use this website to contact the band?</p>
-
+    <input type="radio" name="contact" id="contact" value="contact">
+    <label for="contact">I would rather contact the band</label>
+    <input type="radio" name="contact" id="web_contact" value="web_contact">
+    <label for="web_contact">Have the website contact the band</label>
   <p>3b. Would you rather directly contact the band or have them be notified of interest?</p>
-
+    <input type="radio" name="notify" id="notify" value="notify">
+    <label for="notify">Notify them directly</label>
+    <input type="radio" name="notify" id="web_notify" value="web_notify">
+    <label for="web_notify">Have them be notified by the website</label>
   <p>3c. Would you pay based on performance or would it be a flat rate?</p>
+    <input type="radio" name="pay" id="hourly" value="hourly">
+    <label for="hourly">Hourly rate</label>
+    <input type="radio" name="pay" id="flat" value="flat">
+    <label for="flat">Flat rate</label>
 <!-- rent -->
   <p>4. Would you use our website to rent out an available space for a band?</p>
-
+    <input type="radio" name="rent" id="rent_yes" value="rent_yes">
+    <label for="rent_yes">Yes</label>
+    <input type="radio" name="rent" id="rent_no" value="rent_no">
+    <label for="rent_no">No</label>
   <p>4b. If yes, would you rather accept a flat rate or hourly?</p>
 
-  <p>4c. If your whole house was available, would you rent the whole property out or just a certain space?</p>
+  <p>4c. If your whole house was available, would you rent the whole property our or just a certain space?</p>
 
-  <p>4d. If a band contacted you to rent, would you rather use AirB&B or NoteJam?</p>
+  <p>4d. If a band contacted you to rent, would you rather use AirB&B or NotJam?</p>
 
 <!-- rating -->
   <p>5. Based on your experience with a band/client/vendor, would you prefer to rate the person/group?</p>
-
-  <p>5b. </p>
+    <input type="radio" name="rating" id="rating_yes" value="rating_yes">
+    <label for="rating_yes">Yes</label>
+    <input type="radio" name="rating" id="rating_no" value="rating_no">
+    <label for="rating_no">No</label>
+  <p>Any other additional comments (optional)</p>
   <div class="row">
-      <form class="col s12">
-        <div class="row">
-          <div class="input-field col s6">
-            <input id="input_text" type="text" data-length="10">
-            <label for="input_text">Input text</label>
-          </div>
-        </div>
+      <form class="col s12" action="/submit" method="post">
+        <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
+
         <div class="row">
           <div class="input-field col s12">
-            <textarea id="textarea1" class="materialize-textarea" data-length="120"></textarea>
+            <textarea id="textarea1" class="materialize-textarea" data-length="120" name = "optional"></textarea>
             <label for="textarea1">Textarea</label>
+            <input type="submit" name="" value="Submit">
           </div>
         </div>
       </form>
