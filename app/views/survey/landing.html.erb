@@ -1,7 +1,9 @@
 <div class="container">
+  <!-- I'M SORRY FOR INLINE STYLING -->
   <% if @answer == 'yes' %>
   <h1>I'm a musician!</h1>
-  <form action="/submit" method="post">
+  <%= flash[:errors] %>
+  <form action="/submit_yes" method="post">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
     <p>1. What instrument(s) do you play? Check all that apply</p>
         <input type="checkbox" name="instrument" value="guitar" id="guitar" class="filled-in">
@@ -23,7 +25,7 @@
             <form class="col s12">
               <div class="row">
                 <div class="input-field col s3" style="margin-left:15px;margin-top:30px;">
-                  <input id="input_text" type="text" data-length="20">
+                  <input id="input_text" type="text" data-length="20" name="instrument">
                   <label for="input_text">Other(Please specify):</label>
                 </div>
               </div>
@@ -73,7 +75,12 @@
 
     <p>6. Based on the description of our services, how likely will you use the site? (1 for least likely, 10 for most)</p> -->
 
-
+    <div class="row">
+      <div class="input-field col s12" style="margin-top:40px">
+        <textarea id="textarea1" class="materialize-textarea" data-length="120"></textarea>
+        <label for="textarea1">Feel free to enter addition questions/comments (Optional)</label>
+      </div>
+    </div>
     <input type="submit" name="" value="Submit" class="waves-effect waves-light btn" style="margin-bottom:30px; margin-top:30px">
   </form>
 

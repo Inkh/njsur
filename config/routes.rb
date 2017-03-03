@@ -7,8 +7,8 @@ Rails.application.routes.draw do
 
   post 'boolean' => 'survey#boolean'
 
-  post 'submit' => 'survey#submit'
-  
+  post 'submit_yes' => 'survey#submit_yes'
+
   get 'survey/result'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
