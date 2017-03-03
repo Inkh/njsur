@@ -5,6 +5,9 @@ class SurveyController < ApplicationController
   def result
   end
 
+  def thank
+  end
+
   def boolean
     @answer = params['answer']
     redirect_to ("/landing/#{@answer}")
@@ -15,7 +18,7 @@ class SurveyController < ApplicationController
   end
 
   def submit_yes
-    submission = Musician.create(instrument: params['instrument'], address: params['address_first'], name: params['name_yes'], stranger: params['meet_up'], rent: params['rent'], price: params['pricing'])
+    submission = Musician.create(instrument: params['instrument'], address: params['address_first'], name: params['name_yes'], stranger: params['meet_up'], rent: params['rent'], price: params['pricing'], comment: params['comment'])
 
     if submission.valid?
       session[:user] = "Submitted"

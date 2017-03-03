@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'thank' => 'survey#thank'
+
   get 'survey/landing'
 
   get '/' => 'survey#index'
